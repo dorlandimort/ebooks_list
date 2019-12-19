@@ -1,9 +1,9 @@
-import EbooksRepository from "./EbooksRepository";
+import EbooksRepository from './EbooksRepository';
 
 const repositories = {
-    ebooks: EbooksRepository
+  ebooks: EbooksRepository
 };
 
 export default {
-    get: name => repositories[name]
-}
+  get: name => repositories[name]
+};

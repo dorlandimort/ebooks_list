@@ -1,16 +1,19 @@
 const sort = (array, sortBy, direction) => {
-  const ebooks =  array.sort((first, second) => {
-    if(first[sortBy.field] > second[sortBy.field]) {
+  const ebooks = array.sort((first, second) => {
+    if (first[sortBy.field] > second[sortBy.field]) {
       return 1;
     }
-    if(first[sortBy.field] < second[sortBy.field]) {
+    if (first[sortBy.field] < second[sortBy.field]) {
       return -1;
     }
     return 0;
   });
 
   // Note: direction takes precedence over sortBy.defaultDirection
-  if ( (direction && direction === 'DESC') || (!direction && sortBy.defaultDirection === 'DESC')) {
+  if (
+    (direction && direction === 'DESC') ||
+    (!direction && sortBy.defaultDirection === 'DESC')
+  ) {
     return ebooks.reverse();
   }
   return ebooks;

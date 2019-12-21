@@ -5,16 +5,9 @@ import Ebook from './Ebook';
 const EbookList = ({ ebooks }) => {
   return (
     <div>
-      <h2>Ebook list component</h2>
-      <ul>
-        {ebooks.map(ebook => {
-          return (
-            <li>
-              <Ebook ebook={ebook} id={ebook.id} />
-            </li>
-          );
-        })}
-      </ul>
+      {ebooks.map(ebook => {
+        return <Ebook ebook={ebook} id={ebook.id} key={ebook.id} />;
+      })}
     </div>
   );
 };

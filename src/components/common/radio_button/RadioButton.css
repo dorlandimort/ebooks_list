@@ -1,3 +1,10 @@
+.radio-label {
+    cursor: pointer;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
 .radio-dot {
     opacity: 0;
 }

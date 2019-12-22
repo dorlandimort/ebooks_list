@@ -45,8 +45,21 @@
   display: none;
 }
 
+.ebooks-list {
+  padding-top: 75px;
+}
+
 .ellipsis {
   text-overflow: ellipsis;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: white;
 }
 
 .flex-item-grow {
@@ -180,6 +193,10 @@
   text-align: justify;
 }
 
+.width-10 {
+  width: 10%;
+}
+
 .width-30 {
   width: 30%;
 }
@@ -194,16 +211,4 @@
 
 .width-100 {
   width: 100%;
-}
-
-
-/*
-  Custom Radio Button
- */
-
-.radio-label {
-  cursor: pointer;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
 }

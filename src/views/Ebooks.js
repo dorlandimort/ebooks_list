@@ -46,19 +46,19 @@ const Ebooks = () => {
     <div>
       <div className="flex-column-container align-items-stretch">
         <div
-          className="flex-row-container justify-items-center
+          className="fixed-header flex-row-container justify-items-center
             align-items-center border-bottom"
         >
-          <div style={{ width: '100%' }}>
+          <div className="width-100">
             <h2 className="text-center">Audiolibros</h2>
           </div>
-          <div style={{ width: '10%' }}>
+          <div className="width-10">
             <span className="text-right" onClick={toggleModal}>
               <img src={sortIcon} className="icon" alt="sort" />
             </span>
           </div>
         </div>
-        <div className="margin-left-05 margin-right-05">
+        <div className="ebooks-list margin-left-05 margin-right-05">
           <EbookList ebooks={ebooks} />
         </div>
       </div>

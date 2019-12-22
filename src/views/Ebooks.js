@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from '../components/common/modal/Modal';
+import Loading from '../components/common/loading/Loading';
 import EbooksRepository from '../api/repositories/EbooksRepository';
 import EbookSortTypes from '../constants/EbookSortTypes';
 import EbookList from '../components/ebooks/ebooks_list/EbookList';
@@ -7,29 +8,32 @@ import RadioButton from '../components/common/radio_button/RadioButton';
 import sortIcon from '../assets/images/sort.svg';
 
 const Ebooks = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [ebooks, setEbooks] = useState([]);
   const [isModalShown, setIsModalShown] = useState(false);
   const [currentSortType, setCurrentSortType] = useState(
     EbookSortTypes.BY_TITLE
   );
 
-  const sortEbooks = sortType => {
-    setEbooks(EbooksRepository.sortBy(sortType));
+  const sortEbooks = async () => {
+    setIsLoading(true);
+    setEbooks(await EbooksRepository.sortBy(currentSortType));
+    setIsLoading(false);
   };
 
   const toggleModal = () => {
     setIsModalShown(!isModalShown);
   };
 
-  const handleSort = sortType => {
+  const handleSort = async sortType => {
     setCurrentSortType(sortType);
-    sortEbooks(sortType);
     toggleModal();
+    await sortEbooks(sortType);
   };
 
   useEffect(() => {
-    sortEbooks(currentSortType);
-  });
+    sortEbooks().then();
+  }, []);
 
   useEffect(() => {
     if (isModalShown) {
@@ -37,7 +41,7 @@ const Ebooks = () => {
     } else {
       document.body.style.overflow = 'unset';
     }
-  });
+  }, [isModalShown]);
 
   return (
     <div>
@@ -108,6 +112,7 @@ const Ebooks = () => {
           </div>
         </div>
       </Modal>
+      {isLoading && <Loading />}
     </div>
   );
 };

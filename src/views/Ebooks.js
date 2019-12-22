@@ -26,14 +26,13 @@ const Ebooks = () => {
   };
 
   const handleSort = async sortType => {
-    setCurrentSortType(sortType);
     toggleModal();
-    await sortEbooks(sortType);
+    setCurrentSortType(sortType);
   };
 
   useEffect(() => {
     sortEbooks().then();
-  }, []);
+  }, [currentSortType]);
 
   useEffect(() => {
     if (isModalShown) {

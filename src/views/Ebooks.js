@@ -34,14 +34,6 @@ const Ebooks = () => {
     sortEbooks().then();
   }, [currentSortType]);
 
-  useEffect(() => {
-    if (isModalShown) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [isModalShown]);
-
   return (
     <div>
       <div className="flex-column-container align-items-stretch">

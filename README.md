@@ -9,3 +9,5 @@ This project shows a list of ebooks and some info related to each one of them.
 - [ ] Add Swipe down gesture listener to close modal
 - [ ] Add animations
 - [ ] Add better desktop layout
+- [ ] Make absolute imports work
+- [ ] Fix lag on mobile web browser when using in src/views/ebooks.js to avoid scroll when a modal window is opened. 

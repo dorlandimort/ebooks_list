@@ -7,11 +7,22 @@
   transform: translate(-50%, -50px);
 }
 
-.ebook-cover {
-  width: 90%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10%;
+@media(max-width: 600px) {
+  .ebook-cover {
+    width: 90%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10%;
+  }
+}
+
+@media(min-width: 601px) {
+  .ebook-cover {
+    height: 100px;
+    width: available;
+    object-fit: cover;
+    border-radius: 10%;
+  }
 }
 
 .ebook {

@@ -1,0 +1,28 @@
+.radio-dot {
+    opacity: 0;
+}
+
+.radio-text {
+    margin-left: 10px;
+}
+
+.radio-input {
+    opacity: 0;
+    position: absolute;
+}
+.radio-input:focus + .radio-label, .radio-input:hover + .radio-label {
+    color: initial;
+    background-color: #fbfbfc;
+}
+.radio-input:focus + .radio-label .radio-dot, .radio-input:hover + .radio-label .radio-dot {
+    opacity: 0.13;
+}
+.radio-input:focus + .radio-label .radio-outline, .radio-input:hover + .radio-label .radio-outline {
+    opacity: 0.7;
+}
+.radio-input:checked + .radio-label {
+    color: initial;
+}
+.radio-input:checked + .radio-label .radio-dot, .radio-input:checked + .radio-label .radio-outline {
+    opacity: 1;
+}

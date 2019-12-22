@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Ebook from './Ebook';
+import Ebook from '../ebook/Ebook';
 
 const EbookList = ({ ebooks }) => {
   return (
